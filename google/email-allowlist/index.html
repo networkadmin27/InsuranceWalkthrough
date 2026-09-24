@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Add sending IP addresses to the Google Workspace Gmail email allowlist." />
+    <title>Email Allowlist — Google Workspace</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="google" data-workflow-page="email-allowlist">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Log into your <strong>Google Workspace Admin console</strong></li>
+              <li>Expand the <strong>Apps</strong> drop-down</li>
+              <li>Expand the <strong>Google Workspace</strong> drop-down and click <strong>Gmail</strong></li>
+              <li>Click <strong>Spam, phishing, and malware</strong></li>
+              <li>In the <strong>Organizational Units</strong> section toward the middle-left of the page, ensure your domain is selected</li>
+              <li>Click <strong>Email allowlist</strong></li>
+              <li>Enter our IP addresses as a comma-separated list</li>
+              <li>Click <strong>SAVE</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-group">
+              <h3>Active IP addresses — comma-separated</h3>
+              <code data-value="ipAddresses.active" data-value-type="ip" data-value-separator=", "></code>
+            </div>
+          </section>
+
+          <section class="values-box remove-box" aria-labelledby="remove-values-title">
+            <h2 id="remove-values-title">Remove these IP addresses if present</h2>
+            <ul class="plain-list" data-value-list="ipAddresses.inactive" data-value-type="ip"></ul>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

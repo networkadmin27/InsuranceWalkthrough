@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Configure Microsoft 365 Exchange headers to bypass Junk and Clutter folders." />
+    <title>Junk Folder Bypass — Microsoft 365</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="microsoft" data-workflow-page="junk-bypass">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Log into your <strong>Exchange admin center</strong></li>
+              <li>Expand the <strong>Mail flow</strong> drop-down and click <strong>Rules</strong></li>
+              <li>Select the rule previously set up on our <strong>Microsoft 365 Whitelisting Guide</strong> page and click <strong>Edit rule conditions</strong></li>
+              <li>Under the <strong>Conditions</strong> tab, click the <strong>+</strong> to the right of the <strong>Do the following</strong> section</li>
+              <li>In the new <strong>And</strong> section, select <strong>Modify the message properties</strong> and <strong>set a message header</strong></li>
+              <li>Click the <strong>Enter text</strong> after <strong>Set the message header</strong> and enter <strong data-value="microsoft.junkBypass.firstHeader.name" data-value-type="header-name"></strong>, then click <strong>Save</strong></li>
+              <li>Click the <strong>Enter text</strong> after <strong>to the value</strong> and enter <strong data-value="microsoft.junkBypass.firstHeader.value"></strong>, then click <strong>Save</strong></li>
+              <li>Click <strong>Save</strong> at the bottom of the rule to save the changes</li>
+              <li>To set the second header, create a new rule by clicking <strong>Add a rule</strong> and selecting the <strong>Create a new rule</strong> option</li>
+              <li>Give the rule a name</li>
+              <li>In the <strong>Apply this rule if</strong> drop-down, select <strong>The sender</strong> and <strong>domain is</strong></li>
+              <li>Add our domains in the <strong>specify domain</strong> popup and click <strong>Save</strong></li>
+              <li>In the <strong>Do the following</strong> drop-down, select <strong>Modify the message properties</strong> and <strong>set a message header</strong></li>
+              <li>This time, set the message header to <strong data-value="microsoft.junkBypass.secondHeader.name" data-value-type="header-name"></strong> and the value to <strong data-value="microsoft.junkBypass.secondHeader.value"></strong></li>
+              <li>Once set, click <strong>Next</strong> to go to the <strong>Set rule settings</strong> section</li>
+              <li>Ensure <strong>Rule mode</strong> is set to <strong>Enforce</strong>, then click <strong>Next</strong></li>
+              <li>Once on the <strong>Review and finish</strong> section, click <strong>Finish</strong></li>
+              <li>Ensure this new rule also shows <strong>Enabled</strong> under <strong>Status</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-groups">
+              <div class="value-group">
+                <h3>Active sender domains</h3>
+              <ul class="plain-list" data-value-list="domains.active" data-value-type="domain"></ul>
+              </div>
+              <div class="value-group">
+                <h3>First header</h3>
+                <ul class="plain-list">
+                  <li>Name: <code data-value="microsoft.junkBypass.firstHeader.name" data-value-type="header-name"></code></li>
+                  <li>Value: <code data-value="microsoft.junkBypass.firstHeader.value"></code></li>
+                </ul>
+              </div>
+              <div class="value-group">
+                <h3>Second header</h3>
+                <ul class="plain-list">
+                  <li>Name: <code data-value="microsoft.junkBypass.secondHeader.name" data-value-type="header-name"></code></li>
+                  <li>Value: <code data-value="microsoft.junkBypass.secondHeader.value"></code></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="values-box remove-box" aria-labelledby="remove-values-title">
+            <h2 id="remove-values-title">Remove these sender domains if present</h2>
+            <ul class="plain-list" data-value-list="domains.inactive" data-value-type="domain"></ul>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

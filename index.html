@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Allowlisting instructions for Google Workspace and Microsoft 365." />
+    <title>Allowlisting Instructions</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="workflow-navigation.js" defer></script>
+    <script src="assets/render-navigation.js" defer></script>
+    <script src="allowlist-values.js" defer></script>
+    <script src="assets/render-values.js" defer></script>
+    <script src="assets/theme.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <main class="page" id="content">
+      <div class="utility-bar">
+        <span></span>
+        <button class="theme-toggle" type="button" data-theme-toggle>Light mode</button>
+      </div>
+      <header class="page-header">
+        <h1>Allowlisting instructions</h1>
+      </header>
+
+      <section aria-labelledby="values-heading">
+        <div class="section-heading">
+          <h2 id="values-heading">Domains and IP addresses</h2>
+        </div>
+
+        <div class="reference-grid">
+          <section class="reference-card active">
+            <span class="status-label">Active — add these</span>
+            <h3>Domains</h3>
+            <ul class="plain-list" data-value-list="domains.active" data-value-type="domain"></ul>
+          </section>
+
+          <section class="reference-card active">
+            <span class="status-label">Active — add these</span>
+            <h3>IP addresses</h3>
+            <ul class="plain-list" data-value-list="ipAddresses.active" data-value-type="ip"></ul>
+          </section>
+
+          <section class="reference-card inactive">
+            <span class="status-label">Inactive — remove if present</span>
+            <h3>Domains</h3>
+            <ul class="plain-list" data-value-list="domains.inactive" data-value-type="domain"></ul>
+          </section>
+
+          <section class="reference-card inactive">
+            <span class="status-label">Inactive — remove if present</span>
+            <h3>IP addresses</h3>
+            <ul class="plain-list" data-value-list="ipAddresses.inactive" data-value-type="ip"></ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="platform-heading">
+        <div class="section-heading">
+          <h2 id="platform-heading">Select your platform</h2>
+        </div>
+        <div class="platform-grid">
+          <a class="platform-button" data-workflow-start="google"></a>
+          <a class="platform-button" data-workflow-start="microsoft"></a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

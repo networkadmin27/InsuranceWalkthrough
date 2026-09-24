@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Configure the Google Workspace Gmail inbound gateway." />
+    <title>Inbound Gateway — Google Workspace</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="google" data-workflow-page="inbound-gateway">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Log into your <strong>Google Workspace Admin console</strong></li>
+              <li>Expand the <strong>Apps</strong> drop-down</li>
+              <li>Expand the <strong>Google Workspace</strong> drop-down and click <strong>Gmail</strong></li>
+              <li>Click <strong>Spam, phishing, and malware</strong></li>
+              <li>In the <strong>Organizational Units</strong> section toward the middle-left of the page, ensure your domain is selected</li>
+              <li>Click <strong>Inbound gateway</strong></li>
+              <li>Check the Enable option to open the Inbound Gateway page</li>
+              <li>
+                Configure the Inbound Gateway:
+                <ol>
+                  <li>
+                    <strong>Gateway IPs</strong>
+                    <ul>
+                      <li>Add our IP addresses. They usually need to be added one address at a time</li>
+                      <li><span class="instruction-warning">Do <strong>NOT</strong> select the "Reject all mail not from gateway IPs" check box</span></li>
+                      <li>Select the <strong>Require TLS for connections from the email gateways listed above</strong> check box</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Message Tagging</strong>
+                    <ul>
+                      <li>Select the <strong>Message is considered spam if the following header regexp matches</strong> checkbox</li>
+                      <li>Enter a regular expression that wouldn't match in a normal email. This can be a random series of characters such as <strong><span class="long-string">"$#@!asdansdkjha83274HGBHJGGYSFG3267gMKNNSUIDJasjkdnasdfsm"</span></strong></li>
+                      <li>Select "Disable Gmail spam evaluation on mail from this gateway; only use header value check box"</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+              <li>Click <strong>SAVE</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-group">
+              <h3>Active gateway IP addresses — add individually</h3>
+              <ul class="plain-list" data-value-list="ipAddresses.active" data-value-type="ip"></ul>
+            </div>
+          </section>
+
+          <section class="values-box remove-box" aria-labelledby="remove-values-title">
+            <h2 id="remove-values-title">Remove these gateway IP addresses if present</h2>
+            <ul class="plain-list" data-value-list="ipAddresses.inactive" data-value-type="ip"></ul>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

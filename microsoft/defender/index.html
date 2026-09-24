@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Configure Microsoft Defender Advanced Delivery for an authorized phishing simulation." />
+    <title>Defender Advanced Delivery — Microsoft 365</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="microsoft" data-workflow-page="defender">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Please note that this requires you to have the <strong>Security Administrator</strong> role group</li>
+              <li>Log into your <strong>Microsoft 365 admin center</strong></li>
+              <li>Expand the <strong>Admin centers</strong> drop-down</li>
+              <li>Click <strong>Security</strong> to open the <strong>Microsoft Defender</strong> admin center</li>
+              <li>Expand the <strong>Email &amp; collaboration</strong> drop-down</li>
+              <li>Click <strong>Policies &amp; rules</strong> and select <strong>Threat policies</strong></li>
+              <li>Select the <strong>Advanced Delivery</strong> option under the <strong>Rules</strong> section</li>
+              <li>Click the <strong>Phishing simulation</strong> tab near the top</li>
+              <li>Then click <strong>Edit</strong> directly underneath where the tab was on the page</li>
+              <li>In the popup, expand the <strong>Domain</strong> section</li>
+              <li>Click in the box and type out our domains to add them to the list</li>
+              <li>Next, expand the <strong>Sending IP</strong> section</li>
+              <li>Click in the box and type out our IPs to add them to the list</li>
+              <li>Finally, expand the <strong>Simulation URLs to allow</strong> section</li>
+              <li>Click in the box and add <span data-value-inline-list="microsoft.defender.simulationUrls" data-value-type="domain"></span></li>
+              <li>Click <strong>Save</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-groups">
+              <div class="value-group">
+                <h3>Active domains</h3>
+                <ul class="plain-list" data-value-list="domains.active" data-value-type="domain"></ul>
+              </div>
+              <div class="value-group">
+                <h3>Active sending IP addresses</h3>
+                <ul class="plain-list" data-value-list="ipAddresses.active" data-value-type="ip"></ul>
+              </div>
+              <div class="value-group">
+                <h3>Simulation URLs</h3>
+                <ul class="plain-list" data-value-list="microsoft.defender.simulationUrls" data-value-type="domain"></ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="values-box remove-box" aria-labelledby="remove-values-title">
+            <h2 id="remove-values-title">Remove these values if present</h2>
+            <div class="value-groups">
+              <div class="value-group">
+                <h3>Inactive domains</h3>
+                <ul class="plain-list" data-value-list="domains.inactive" data-value-type="domain"></ul>
+              </div>
+              <div class="value-group">
+                <h3>Inactive sending IP addresses</h3>
+                <ul class="plain-list" data-value-list="ipAddresses.inactive" data-value-type="ip"></ul>
+              </div>
+            </div>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

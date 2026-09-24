@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Create an approved senders list in Google Workspace Gmail." />
+    <title>Approved Senders — Google Workspace</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="google" data-workflow-page="approved-senders">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Log into your <strong>Google Workspace Admin console</strong></li>
+              <li>Expand the <strong>Apps</strong> drop-down</li>
+              <li>Expand the <strong>Google Workspace</strong> drop-down and click <strong>Gmail</strong></li>
+              <li>Click <strong>Spam, phishing, and malware</strong></li>
+              <li>In the <strong>Organizational Units</strong> section toward the middle-left of the page, ensure your domain is selected</li>
+              <li>Scroll to the <strong>Spam</strong> section</li>
+              <li>If no list has been set up before, click <strong>Configure</strong>. Otherwise, click <strong>Add Another Rule</strong></li>
+              <li>Give the setting a description/name</li>
+              <li>Check the <strong>Bypass spam filters for messages received from addresses or domains within these approved senders lists</strong> box</li>
+              <li>Directly underneath, click <strong>Use existing list</strong> or <strong>Create or edit list</strong></li>
+              <li>
+                If selecting <strong>Create or edit list</strong>:
+                <ul>
+                  <li>The <strong>Manage address lists</strong> setting will open in a new tab</li>
+                  <li>Click <strong>ADD ADDRESS LIST</strong></li>
+                  <li>Enter a name for the new list</li>
+                  <li>Click <strong>ADD ADDRESS</strong> and enter our domain or a specific email address</li>
+                  <li>Repeat for any additional domains/addresses</li>
+                  <li>Click <strong>SAVE</strong> for this address list</li>
+                  <li>Then, return to the original tab and click <strong>Use existing list</strong></li>
+                </ul>
+              </li>
+              <li>Check the box for the list(s) with our domains/addresses, then close the popup</li>
+              <li>Also check the <strong>Bypass spam filters and hide warnings for messages from senders or domains in selected lists</strong> box directly underneath the previous one</li>
+              <li>Add the list with the <strong>Use existing list</strong> or <strong>Create or edit list</strong> options in the same way</li>
+              <li>Click <strong>SAVE</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-group">
+              <h3>Active domains — add each separately</h3>
+              <ul class="plain-list" data-value-list="domains.active" data-value-type="domain"></ul>
+            </div>
+          </section>
+
+          <section class="values-box remove-box" aria-labelledby="remove-values-title">
+            <h2 id="remove-values-title">Remove these domains if present</h2>
+            <ul class="plain-list" data-value-list="domains.inactive" data-value-type="domain"></ul>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

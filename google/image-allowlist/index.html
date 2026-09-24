@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Configure the Google Workspace Gmail image URL proxy allowlist." />
+    <title>Image URL Allowlist — Google Workspace</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="google" data-workflow-page="image-allowlist">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Log into your <strong>Google Workspace Admin console</strong></li>
+              <li>Expand the <strong>Apps</strong> drop-down</li>
+              <li>Expand the <strong>Google Workspace</strong> drop-down and click <strong>Gmail</strong></li>
+              <li>Click <strong>End User Access</strong></li>
+              <li>In the <strong>Organizational Units</strong> section toward the middle-left of the page, ensure your domain is selected</li>
+              <li>Click <strong>Image URL proxy allowlist</strong></li>
+              <li>Add <span data-value-inline-list="google.imageAllowlist.urlPatterns" data-value-type="https-url"></span></li>
+              <li>In the <strong>Enter an image URL to preview</strong> section,<br /> enter <strong data-value="google.imageAllowlist.testImageUrl" data-value-type="https-url"></strong>, then click <strong>PREVIEW</strong> to verify the URL patterns</li>
+              <li>Click <strong>SAVE</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box full-width-values" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-groups">
+              <div class="value-group">
+                <h3>Image URL patterns — add each</h3>
+                <ul class="plain-list" data-value-list="google.imageAllowlist.urlPatterns" data-value-type="https-url"></ul>
+              </div>
+              <div class="value-group">
+                <h3>Test image URL</h3>
+                <code data-value="google.imageAllowlist.testImageUrl" data-value-type="https-url"></code>
+              </div>
+            </div>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

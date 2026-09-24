@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Create a Google Workspace Gmail content compliance rule." />
+    <title>Content Compliance — Google Workspace</title>
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <script src="../../workflow-navigation.js" defer></script>
+    <script src="../../assets/render-navigation.js" defer></script>
+    <script src="../../allowlist-values.js" defer></script>
+    <script src="../../assets/render-values.js" defer></script>
+    <script src="../../assets/theme.js" defer></script>
+  </head>
+  <body class="guide-body" data-workflow-platform="google" data-workflow-page="content-compliance">
+    <a class="skip-link" href="#instructions">Skip to instructions</a>
+    <main class="page guide-page">
+      <div class="utility-bar"><nav class="breadcrumb" data-workflow-breadcrumb></nav><button class="theme-toggle" type="button" data-theme-toggle>Light mode</button></div>
+      <details class="mobile-step-nav" data-workflow-mobile-nav></details>
+      <div class="guide-layout">
+        <nav class="step-nav" data-workflow-sidebar></nav>
+
+        <article class="guide-content">
+          <header class="guide-header">
+            <p class="step-count" data-workflow-position></p>
+            <h1 data-workflow-page-label></h1>
+          </header>
+
+          <section class="instructions" id="instructions" aria-labelledby="instructions-title">
+            <h2 id="instructions-title">Instructions</h2>
+            <ol>
+              <li>Log into your <strong>Google Workspace Admin console</strong></li>
+              <li>Expand the <strong>Apps</strong> drop-down</li>
+              <li>Expand the <strong>Google Workspace</strong> drop-down and click <strong>Gmail</strong></li>
+              <li>Click <strong>Compliance</strong></li>
+              <li>In the <strong>Organizational Units</strong> section toward the middle-left of the page, ensure your domain is selected</li>
+              <li>Scroll to the <strong>Content Compliance</strong> section</li>
+              <li>If no rule has been set up before, click <strong>Configure</strong>. Otherwise, click <strong>Add Another Rule</strong></li>
+              <li>Give the Content Compliance rule a name</li>
+              <li>Under <strong>Email messages to affect</strong>, check the <strong>Inbound</strong> box</li>
+              <li>
+                Under <strong>Add expressions that describe the content you want to search for in each message</strong>, click <strong>ADD</strong>:
+                <ul>
+                  <li>Select <strong>Advanced content match</strong> from the drop-down list</li>
+                  <li>Change <strong>Location</strong> to <strong>Envelope sender</strong>. You may need to scroll down to see the option</li>
+                  <li>Change <strong>Match type</strong> to <strong>Matches regex</strong></li>
+                  <li>In the <strong>Regexp</strong> text box, enter the expression <strong data-value="google.contentCompliance.envelopeSenderExpression" data-value-type="email-expression"></strong></li>
+                  <li>Click <strong>SAVE</strong></li>
+                </ul>
+              </li>
+              <li>Under the <strong>3. If the above expressions match, do the following</strong> section, scroll to <strong>Spam</strong></li>
+              <li>Check the <strong>Bypass spam filter for this message</strong> box</li>
+              <li>Click <strong>SAVE</strong></li>
+            </ol>
+          </section>
+
+          <section class="values-box" aria-labelledby="values-title">
+            <h2 id="values-title">Add these values</h2>
+            <div class="value-group">
+              <h3>Envelope sender regular expression</h3>
+              <code data-value="google.contentCompliance.envelopeSenderExpression" data-value-type="email-expression"></code>
+            </div>
+          </section>
+
+          <section class="values-box remove-box" aria-labelledby="remove-values-title">
+            <h2 id="remove-values-title">Remove these envelope sender expressions if present</h2>
+            <ul class="plain-list" data-value-list="domains.inactive" data-value-type="domain" data-value-prefix="@"></ul>
+          </section>
+
+          <nav class="page-nav" data-workflow-pagination></nav>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
